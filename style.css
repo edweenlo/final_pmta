@@ -105,17 +105,22 @@ body {
     border-top: none;
     margin: 40px 10px 40px 0;
     min-width: 330px;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 
   
 /* INTERNAL TAB STYLING */
 /* PANEL CONTAINER */
 .panel-container {
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     margin: 0 auto;
     max-width: 4000px;
+    overflow: hidden;
+}
+.panel-container.active {
+    display: flex;
 }
 
 /* PANEL LEFT */
@@ -204,7 +209,7 @@ body {
     padding-right: 4%;
     margin: 0;
     border: none;
-    background-color: #6E81A1;
+    /*background-color: #6E81A1;*/
     color: white;
     position: absolute;
     top: 0;
@@ -215,6 +220,10 @@ body {
 }
 .previous.active {
     transform: translateX(4%);
+    overflow-x: scroll;
+}
+.previous .panel {
+    background-color: #6E81A1;
 }
 .prev-tab {
     background-color: #A2182F;
@@ -230,8 +239,13 @@ body {
 }
 .prev-tab:hover, .prev-tab.active {
     background-color: #EE2145;
+
 }
 
+.prev-tab.active {
+    transform: translate(60px, 200px) rotate(-90deg);
+    border-radius: 0 0 20px 20px;
+}
 
 
   

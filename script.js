@@ -27,10 +27,34 @@ function openRegion(evt, regionName) {
 
 //CURRENT/PREVIOUS
 
-function openPrevious() {
+function openPrevious(region) {
   let prev = document.getElementsByClassName("previous");
-  prev[0].classList.toggle("active");
-
   let tab = document.getElementsByClassName("prev-tab");
-  tab[0].classList.toggle("active");
+
+  switch(region) {
+    case 'unitedStates':
+      prev[0].classList.toggle("active");
+      tab[0].classList.toggle("active");
+      break;
+    case 'latinAmerica':
+      prev[1].classList.toggle("active");
+      tab[1].classList.toggle("active");
+      break;
+    case 'canada':
+      prev[2].classList.toggle("active");
+      tab[2].classList.toggle("active");
+      break;
+    case 'middleEast':
+      prev[3].classList.toggle("active");
+      tab[3].classList.toggle("active");
+      break;
+    case 'tpd':
+      prev[4].classList.toggle("active");
+      tab[4].classList.toggle("active");
+      break;
+    case 'china':
+      prev[5].classList.toggle("active");
+      tab[5].classList.toggle("active");
+      break;
+  }
 }
